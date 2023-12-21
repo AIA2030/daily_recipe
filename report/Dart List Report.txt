@@ -1,0 +1,100 @@
+﻿Q1: Take a list, say for example this one:
+  a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+and write a program that prints out all the elements of the list that are less than 5.
+
+
+A1: Dart List Remove Elements
+ 
+void main() {
+  var a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+
+
+  a.removeWhere((element) => element > 5);
+
+
+  print(a);
+}
+
+
+Q2: Take two lists, for example:
+  a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+
+  b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+and write a program that returns a list that contains only the elements that are common between them (without duplicates). Make sure your program works on two lists of different sizes.
+
+
+A2: Dart Unique Elements 
+
+
+void main() {
+  var a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+  var b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+
+  var listCommen = a.where((element) => b.contains(element)).toSet().toList();
+
+
+  print(listCommen);
+}
+
+
+Q3: Let’s say you are given a list saved in a variable:
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]. 
+Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
+
+
+A3: Dart Filter List 
+
+
+void main() {
+  var a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+
+  a = a.where((element) => element % 2 == 0).toList();
+
+
+  print(a);
+}
+
+
+Q4: Write a program that takes a list of numbers for example
+a = [5, 10, 15, 20, 25]
+and makes a new list of only the first and last elements of the given list. For practice, write this code inside a function.
+
+
+A4: Dart List
+
+
+void main() {
+  var a = [5, 10, 15, 20, 25];
+
+
+  a.removeRange(1,4);
+
+
+  print(a);
+}
+
+
+OR
+
+
+void main() {
+  List<int> a = [5, 10, 15, 20, 25];
+  List<int> result = getFirstAndLastElements(a);
+  print(result);
+}
+
+
+List<int> getFirstAndLastElements(List<int> inputList) {
+  if (inputList.length < 2) {
+    throw Exception('Input list should have at least 2 elements.');
+  }
+
+
+  List<int> outputList = [inputList.first, inputList.last];
+
+
+  return outputList;
+}
