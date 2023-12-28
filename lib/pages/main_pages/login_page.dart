@@ -34,7 +34,7 @@ class _LogInState extends State<LogIn> {
 
                       Container(
                         padding: EdgeInsets.fromLTRB(0.0, 320.0, 0.0, 0.0),
-                        child: Text( "Cooking Done The Easy Way", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                        child: Text( "Cooking Done The Easy Way", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
                       ),
 
                     ],
@@ -61,7 +61,7 @@ class _LogInState extends State<LogIn> {
                               },
 
                               child: Center(
-                                child: Text("Register", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix')),
+                                child: Text("Register", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix')),
                               ),
                             ),
                           ),
@@ -79,7 +79,7 @@ class _LogInState extends State<LogIn> {
                             },
 
                             child: Center(
-                              child: Text("Sign In", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix' )),
+                              child: Text("Sign In", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix' )),
                             ),
                           ),
                         ),

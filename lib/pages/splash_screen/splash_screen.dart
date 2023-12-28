@@ -59,11 +59,11 @@ class SplashScreenState extends State<SplashScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      child: Text("Cooking Done ", style: TextStyle(color: Colors.deepOrange, fontSize: 25.0, fontWeight: FontWeight.bold),),
+                      child: Text("Cooking Done ", style: TextStyle(color: Colors.deepOrange, fontSize: 25.0, fontWeight: FontWeight.bold, fontFamily: 'Hellix'),),
                     ),
 
                     Container(
-                      child: Text( "The Easy Way.", style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                      child: Text( "The Easy Way.", style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Hellix'),),
                     ),
 
                   ],

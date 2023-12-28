@@ -1,6 +1,4 @@
-import 'package:daily_recipe/pages/login_pages/forget_pass.dart';
 import 'package:daily_recipe/pages/login_pages/sign_in.dart';
-import 'package:daily_recipe/pages/login_pages/sign_up.dart';
 import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +58,7 @@ class _SignUpState extends State<SignUp> {
                         Container(
                             padding: EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
                             child: Center(
-                              child:Text( "Register", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Hellix'),),
+                              child:Text( "Register", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal, color: Colors.white, fontFamily: 'Hellix'),),
                             )
                         ),
                       ],
@@ -80,10 +78,10 @@ class _SignUpState extends State<SignUp> {
                                         children: [
                                           Icon(Icons.person_outline, color: Colors.grey.shade400,),
                                           SizedBox(width: 10,),
-                                          Text("Full Name", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                          Text("Full Name", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
                                         ],
                                       ),
-                                      focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.black45))),
+                                      focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
                                   validator:(value){
                                     if(value == null || value.isEmpty){
@@ -102,10 +100,10 @@ class _SignUpState extends State<SignUp> {
                                         children: [
                                           Icon(Icons.email_outlined, color: Colors.grey.shade400,),
                                           SizedBox(width: 10,),
-                                          Text("Email Address", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                          Text("Email Address", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
                                         ],
                                       ),
-                                      focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.black45))),
+                                      focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
                                   validator:(value){
                                     if(value == null || value.isEmpty){
@@ -128,14 +126,14 @@ class _SignUpState extends State<SignUp> {
                                       children: [
                                         Icon(Icons.lock_outline, color: Colors.grey.shade400,),
                                         SizedBox(width: 10,),
-                                        Text("Password", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                        Text("Password", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
                                       ],
                                     ),
                                     suffixIcon: InkWell(
                                       onTap: () => toggleObsecure(),
                                       child: Icon(obsecureText? Icons.visibility_off_outlined: Icons.visibility_outlined, color: Colors.grey.shade400,),
                                     ),
-                                    focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.black45))),
+                                    focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
                                 validator: (value){
                                   if (value == null || value.isEmpty) {
@@ -171,7 +169,7 @@ class _SignUpState extends State<SignUp> {
                                     },
 
                                     child: Center(
-                                      child: Text("Register", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix')),
+                                      child: Text("Register", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix')),
                                     ),
                                   ),
                                 ),
@@ -184,7 +182,7 @@ class _SignUpState extends State<SignUp> {
 
                     Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Already registered?", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                        Text("Already registered?", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
 
                         SizedBox(width: 5.0,),
 
@@ -194,7 +192,7 @@ class _SignUpState extends State<SignUp> {
                           },
 
                           child: Center(
-                            child: Text("Sign in.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.deepOrange, fontFamily: 'Hellix')),
+                            child: Text("Sign in.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.deepOrange, fontFamily: 'Hellix')),
                           ),
                         ),
                       ],

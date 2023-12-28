@@ -36,6 +36,10 @@ dependencies:
   url_launcher: ^6.2.2
   animated_splash_screen:
   page_transition: ^2.0.9
+  font_awesome_flutter: ^10.6.0
+  flutter_rating_bar: ^4.0.1
+  carousel_slider: ^4.2.1
+  dots_indicator: ^3.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -80,15 +84,24 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+  fonts:
+     - family: Hellix
+       fonts:
+         - asset: assets/fonts/Hellix-Light.ttf
+           style: italic
+
+         - asset: assets/fonts/Hellix-Regular.ttf
+           style: normal
+
+         - asset: assets/fonts/Hellix-Medium.ttf
+
+
+         - asset: assets/fonts/Hellix-Bold.ttf
+
+
+     - family: Abril
+       fonts:
+         - asset: assets/fonts/AbrilFatface-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

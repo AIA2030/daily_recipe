@@ -58,7 +58,7 @@ class _SignInState extends State<SignIn> {
                     Container(
                       padding: EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
                       child: Center(
-                        child:Text( "Sign In", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Hellix'),),
+                        child:Text( "Sign In", style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal, color: Colors.white, fontFamily: 'Hellix'),),
                       )
                     ),
                   ],
@@ -79,10 +79,10 @@ class _SignInState extends State<SignIn> {
                                   children: [
                                     Icon(Icons.email_outlined, color: Colors.grey.shade400,),
                                     SizedBox(width: 10,),
-                                    Text("Email Address", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                    Text("Email Address", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 14.0, fontFamily: 'Hellix'),),
                                   ],
                                 ),
-                                focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.black45))),
+                                focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
                             validator:(value){
                               if(value == null || value.isEmpty){
@@ -105,14 +105,14 @@ class _SignInState extends State<SignIn> {
                                 children: [
                                   Icon(Icons.lock_outline, color: Colors.grey.shade400,),
                                   SizedBox(width: 10,),
-                                  Text("Password", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                  Text("Password", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.normal, fontSize: 14.0, fontFamily: 'Hellix'),),
                                 ],
                               ),
                               suffixIcon: InkWell(
                                 onTap: () => toggleObsecure(),
                                 child: Icon(obsecureText? Icons.visibility_off_outlined: Icons.visibility_outlined, color: Colors.grey.shade400,),
                               ),
-                              focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.black45))),
+                              focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
                              validator: (value){
                             if (value == null || value.isEmpty) {
@@ -139,7 +139,7 @@ class _SignInState extends State<SignIn> {
                               },
 
                               child: Center(
-                                child: Text("Forget Password?", style: TextStyle(color: Colors.cyan, decoration: TextDecoration.underline, fontWeight: FontWeight.bold, fontSize: 12.0, fontFamily: 'Hellix')),
+                                child: Text("Forget Password?", style: TextStyle(color: Colors.cyan, decoration: TextDecoration.underline, fontWeight: FontWeight.normal, fontSize: 12.0, fontFamily: 'Hellix')),
                               ),
                             ),
                           ),
@@ -168,7 +168,7 @@ class _SignInState extends State<SignIn> {
                               },
 
                               child: Center(
-                                child: Text("Sign IN", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix')),
+                                child: Text("Sign IN", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix')),
                               ),
                             ),
                           ),
@@ -181,7 +181,7 @@ class _SignInState extends State<SignIn> {
 
                 Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("Don't have an account?", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                    Text("Don't have an account?", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
 
                     SizedBox(width: 5.0,),
 
@@ -191,7 +191,7 @@ class _SignInState extends State<SignIn> {
                       },
 
                       child: Center(
-                        child: Text("Register.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.deepOrange, fontFamily: 'Hellix')),
+                        child: Text("Register.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.deepOrange, fontFamily: 'Hellix')),
                       ),
                     ),
                   ],

@@ -36,7 +36,7 @@ class _ForgetPassState extends State<ForgetPass> {
                       Container(
                           padding: EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
                           child: Center(
-                            child:Text( "Sign In", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Hellix'),),
+                            child:Text( "Sign In", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal, color: Colors.white, fontFamily: 'Hellix'),),
                           )
                       ),
                     ],
@@ -47,15 +47,15 @@ class _ForgetPassState extends State<ForgetPass> {
                     child: Column(
                       children: <Widget> [
 
-                        Center(child: Text("Enter your username, or the email address that you used to register. We'll send you an email with your username and a link to reset your password.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.grey.shade400, fontFamily: 'Hellix'))),
+                        Center(child: Text("Enter your username, or the email address that you used to register. We'll send you an email with your username and a link to reset your password.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'))),
 
                         SizedBox(height: 20.0,),
 
                         TextField(
                           controller: username,
                           decoration: InputDecoration(
-                              label: Text("Email/ Username", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix'),),
-                              focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.black45, ))),
+                              label: Text("Email/ Username", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
+                              focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white, ))),
                         ),
 
                         SizedBox(height: 40.0,),
@@ -75,7 +75,7 @@ class _ForgetPassState extends State<ForgetPass> {
                               },
 
                               child: Center(
-                                child: Text("Send", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0, fontFamily: 'Hellix')),
+                                child: Text("Send", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix')),
                               ),
                             ),
                           ),
@@ -91,7 +91,7 @@ class _ForgetPassState extends State<ForgetPass> {
 
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text("If you still need help, check out", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                      Text("If you still need help, check out", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
                       //  Text("New Member?", style: TextStyle(fontWeight: FontWeight.normal),),
 
                       SizedBox(width: 5.0,),
@@ -102,7 +102,7 @@ class _ForgetPassState extends State<ForgetPass> {
                         },
 
                         child: Center(
-                          child: Text("Support", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.deepOrange, fontFamily: 'Hellix')),
+                          child: Text("Support", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.deepOrange, fontFamily: 'Hellix')),
                         ),
                       ),
                     ],
