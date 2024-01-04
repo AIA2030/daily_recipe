@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'pages/splash_screen/splash_screen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    var preference = await SharedPreferences.getInstance();
 
+    GetIt.I.registerSingleton<SharedPreferences>(preference);
+  } catch (e) {
+    print(
+        '=========================Error In init Prefrences ${e}========================');
+  }
   runApp(const MyApp());
 }
 

@@ -1,6 +1,7 @@
 import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/pages/main_pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,32 +13,24 @@ class SplashScreen extends StatefulWidget {
 
 class SplashScreenState extends State<SplashScreen> {
 
-  static const String KEYLOGIN ="login";
+  // static const String KEYLOGIN ="login";
 
   @override
 
-  void initState(){
+  void initState() {
+    initSplash();
     super.initState();
-    _navigatetohome();
   }
 
-  _navigatetohome()async{
-    var PrefrenceServices = await SharedPreferences.getInstance();
-    var isLoggedIn =PrefrenceServices.getBool(KEYLOGIN);
+  void initSplash()async{
+    await Future.delayed(const Duration(milliseconds: 2500));
 
-    await Future.delayed(Duration(milliseconds: 2500), (){
-
-      if(isLoggedIn!= null){
-        if(isLoggedIn){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+      if(GetIt.I.get<SharedPreferences>().getBool('isLogin') ??false) {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage()));
         }
         else{
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogIn()));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => LogIn()));
         }
-      }else{
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogIn()));
-      }
-    });
   }
 
   @override

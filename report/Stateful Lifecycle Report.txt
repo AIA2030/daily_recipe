@@ -1,0 +1,27 @@
+Report: Stateful Lifecycle of Stateful Widget
+
+Stateful Widget Lifecycle:
+The stateful lifecycle of a stateful widget consists of several distinct phases. Each phase represents a specific point in the widget's lifespan and provides opportunities for performing specific operations or handling state changes. The typical stateful widget lifecycle consists of the following phases:
+
+1. Creation:
+- The widget is instantiated using the constructor.
+- The initState() method is called, providing an opportunity to initialize any variables or resources needed by the widget.
+
+2. Initialization:
+- The dependencies of the widget are resolved.
+- The didChangeDependencies() method is called, allowing the widget to handle changes in its dependencies.
+
+3. State Changes:
+- The build() method is called, which builds the widget's user interface based on its current state.
+- User interactions or external events can trigger state changes.
+- The setState() method is called to notify the framework that the state has changed.
+- The framework calls the build() method again to update the user interface based on the new state.
+
+4. Deactivation:
+-The deactivate() method is called when the widget is removed from the widget tree.
+- It provides an opportunity to clean up resources or perform any necessary cleanup operations.
+
+5. Disposal:
+-The dispose() method is called when the widget is permanently removed from the widget tree.
+- It allows the widget to release any resources it has acquired during its lifetime.
+

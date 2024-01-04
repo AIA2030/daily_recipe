@@ -17,7 +17,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
     child: Container(
-      padding: EdgeInsets.all(10),
+      // padding: EdgeInsets.all(10),
 
       child: Column(
           children: [
@@ -25,16 +25,17 @@ class _VerticalScrollState extends State<VerticalScroll> {
               color: Colors.grey.shade50,
               clipBehavior: Clip.antiAlias,
               child:Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child:Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
 
                     Container(
                       padding: EdgeInsets.all(5),
                       height: 70,
                       width: 100,
-                      child:Image.asset('assets/images/Muffins copy.png', fit: BoxFit.fill),
+                      child:Image.asset('assets/images/Muffins.png', fit: BoxFit.fill),
                     ),
 
                     Container(
@@ -76,26 +77,46 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                               ),
 
-                              SizedBox(width: 20,),
+                              SizedBox(width: 10,),
 
-                              Text( "120 Calories", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
+                              Text( "120 Calories", style: TextStyle(fontSize: 9.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
 
                             ],
                           ),
+
+                          SizedBox(height: 5,),
 
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 child:Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
 
                                   children: [
-                                    IconButton(icon: Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "10 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-                                    IconButton(icon: Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
 
+                                      children: [
+                                        Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "10 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+
+                                      ],
+                                    ),
+
+                                    SizedBox(width: 30,),
+
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                                      children: [
+                                        Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -108,9 +129,8 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                     ),
 
-                    SizedBox(width: 33,),
-
                     Container(
+                     alignment:Alignment.topRight,
 
                       child: IconButton(icon: Icon(FontAwesomeIcons.heart, color: Colors.grey.shade400, size: 20),onPressed: () {},),
 
@@ -126,16 +146,18 @@ class _VerticalScrollState extends State<VerticalScroll> {
               color: Colors.grey.shade50,
               clipBehavior: Clip.antiAlias,
               child:Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child:Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: [
 
                     Container(
                       padding: EdgeInsets.all(5),
                       height: 70,
                       width: 100,
-                      child:Image.asset('assets/images/detail_GlazedSalmon_2 copy.png', fit: BoxFit.fill),
+                      child:Image.asset('assets/images/detail_GlazedSalmon.png', fit: BoxFit.fill),
                     ),
 
                     Container(
@@ -184,21 +206,42 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             ],
                           ),
 
+                          SizedBox(height: 5,),
+
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 child:Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
 
-                                  children: [
-                                    IconButton(icon: Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-                                    IconButton(icon: Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                            children:
+                            [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
 
-                                  ],
-                                ),
+                                children: [
+                                  Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 12),
+                                  SizedBox(width: 5,),
+                                  Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+
+                                ],
+                              ),
+
+                              SizedBox(width: 30,),
+
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+
+                                children: [
+                                  Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 12),
+                                  SizedBox(width: 5,),
+                                  Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                ],
+                              ),
+                            ],
+                          ),
                               ),
 
                             ],
@@ -209,9 +252,9 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                     ),
 
-                    SizedBox(width: 30,),
 
                     Container(
+                      alignment:Alignment.topRight,
 
                       child: IconButton(icon: Icon(FontAwesomeIcons.heart, color: Colors.grey.shade400, size: 20),onPressed: () {},),
 
@@ -227,16 +270,18 @@ class _VerticalScrollState extends State<VerticalScroll> {
               color: Colors.grey.shade50,
               clipBehavior: Clip.antiAlias,
               child:Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child:Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: [
 
                     Container(
-                      // padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
                       height: 70,
                       width: 100,
-                      child:Image.asset('assets/images/460x533_ChickenThighs_2 copy.png', fit: BoxFit.fill),
+                      child:Image.asset('assets/images/ChickenThighs.png', fit: BoxFit.fill),
                     ),
 
                     Container(
@@ -257,7 +302,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                           SizedBox(height: 5,),
 
-                          Text( "Asian Glazed Chicken Thighs", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black87, fontFamily: 'Hellix'),),
+                          Text( "Asian Glazed Chicken Thighs", style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, color: Colors.black87, fontFamily: 'Hellix'),),
 
                           SizedBox(height: 5,),
 
@@ -285,19 +330,40 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             ],
                           ),
 
+                          SizedBox(height: 5,),
+
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 child:Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
 
-                                  children: [
-                                    IconButton(icon: Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-                                    IconButton(icon: Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                  children:
+                                  [
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
 
+                                      children: [
+                                        Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+
+                                      ],
+                                    ),
+
+                                    SizedBox(width: 30,),
+
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                                      children: [
+                                        Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -310,9 +376,9 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                     ),
 
-                    // SizedBox(width: 5,),
 
                     Container(
+                      alignment:Alignment.topRight,
 
                       child: IconButton(icon: Icon(FontAwesomeIcons.heart, color: Colors.grey.shade400, size: 20),onPressed: () {},),
 
@@ -328,16 +394,17 @@ class _VerticalScrollState extends State<VerticalScroll> {
               color: Colors.grey.shade50,
               clipBehavior: Clip.antiAlias,
               child:Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child:Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
 
                     Container(
                       padding: EdgeInsets.all(5),
                       height: 70,
                       width: 100,
-                      child:Image.asset('assets/images/Muffins copy.png', fit: BoxFit.fill),
+                      child:Image.asset('assets/images/Muffins.png', fit: BoxFit.fill),
                     ),
 
                     Container(
@@ -379,26 +446,46 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                               ),
 
-                              SizedBox(width: 20,),
+                              SizedBox(width: 10,),
 
-                              Text( "120 Calories", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
+                              Text( "120 Calories", style: TextStyle(fontSize: 9.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
 
                             ],
                           ),
+
+                          SizedBox(height: 5,),
 
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 child:Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
 
                                   children: [
-                                    IconButton(icon: Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "10 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-                                    IconButton(icon: Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
 
+                                      children: [
+                                        Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "10 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+
+                                      ],
+                                    ),
+
+                                    SizedBox(width: 30,),
+
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                                      children: [
+                                        Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -411,9 +498,8 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                     ),
 
-                    SizedBox(width: 33,),
-
                     Container(
+                      alignment:Alignment.topRight,
 
                       child: IconButton(icon: Icon(FontAwesomeIcons.heart, color: Colors.grey.shade400, size: 20),onPressed: () {},),
 
@@ -429,16 +515,18 @@ class _VerticalScrollState extends State<VerticalScroll> {
               color: Colors.grey.shade50,
               clipBehavior: Clip.antiAlias,
               child:Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child:Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: [
 
                     Container(
                       padding: EdgeInsets.all(5),
                       height: 70,
                       width: 100,
-                      child:Image.asset('assets/images/detail_GlazedSalmon_2 copy.png', fit: BoxFit.fill),
+                      child:Image.asset('assets/images/detail_GlazedSalmon.png', fit: BoxFit.fill),
                     ),
 
                     Container(
@@ -487,19 +575,40 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             ],
                           ),
 
+                          SizedBox(height: 5,),
+
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 child:Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
 
-                                  children: [
-                                    IconButton(icon: Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-                                    IconButton(icon: Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                  children:
+                                  [
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
 
+                                      children: [
+                                        Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+
+                                      ],
+                                    ),
+
+                                    SizedBox(width: 30,),
+
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                                      children: [
+                                        Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -512,9 +621,9 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                     ),
 
-                    SizedBox(width: 30,),
 
                     Container(
+                      alignment:Alignment.topRight,
 
                       child: IconButton(icon: Icon(FontAwesomeIcons.heart, color: Colors.grey.shade400, size: 20),onPressed: () {},),
 
@@ -530,16 +639,18 @@ class _VerticalScrollState extends State<VerticalScroll> {
               color: Colors.grey.shade50,
               clipBehavior: Clip.antiAlias,
               child:Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child:Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: [
 
                     Container(
-                      // padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
                       height: 70,
                       width: 100,
-                      child:Image.asset('assets/images/460x533_ChickenThighs_2 copy.png', fit: BoxFit.fill),
+                      child:Image.asset('assets/images/ChickenThighs.png', fit: BoxFit.fill),
                     ),
 
                     Container(
@@ -560,7 +671,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                           SizedBox(height: 5,),
 
-                          Text( "Asian Glazed Chicken Thighs", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black87, fontFamily: 'Hellix'),),
+                          Text( "Asian Glazed Chicken Thighs", style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, color: Colors.black87, fontFamily: 'Hellix'),),
 
                           SizedBox(height: 5,),
 
@@ -588,19 +699,40 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             ],
                           ),
 
+                          SizedBox(height: 5,),
+
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 child:Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
 
-                                  children: [
-                                    IconButton(icon: Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-                                    IconButton(icon: Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 15),onPressed: () {},),
-                                    Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                  children:
+                                  [
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
 
+                                      children: [
+                                        Icon(FontAwesomeIcons.clock, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "45 mins", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+
+                                      ],
+                                    ),
+
+                                    SizedBox(width: 30,),
+
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                                      children: [
+                                        Icon(FontAwesomeIcons.bellConcierge, color: Colors.grey.shade400, size: 12),
+                                        SizedBox(width: 5,),
+                                        Text( "1 Serving", style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -613,9 +745,9 @@ class _VerticalScrollState extends State<VerticalScroll> {
 
                     ),
 
-                    // SizedBox(width: 5,),
 
                     Container(
+                      alignment:Alignment.topRight,
 
                       child: IconButton(icon: Icon(FontAwesomeIcons.heart, color: Colors.grey.shade400, size: 20),onPressed: () {},),
 

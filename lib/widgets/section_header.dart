@@ -13,8 +13,8 @@ class _HeaderState extends State<Header> {
   Widget build(BuildContext context) {
     return
       Container(
-    padding: EdgeInsets.all(10),
           child:Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
 

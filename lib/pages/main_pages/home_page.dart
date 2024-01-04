@@ -32,7 +32,7 @@ double rating =0;
 
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(15),
           child:
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,14 +43,12 @@ double rating =0;
                 SizedBox(height: 10,),
 
                 Container(
-                  padding: EdgeInsets.only( left: 20.0, right: 200.0),
                   child: Text( "Bonjour, Emma", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
                 ),
 
                 SizedBox(height: 10,),
 
                 Container(
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
                   child: Text( "What would you like to cook today?", style: TextStyle(fontSize: 20.0, color: Colors.black87, fontFamily: 'Abril'),),
                 ),
 
@@ -59,15 +57,15 @@ double rating =0;
                 SearchBarPage(),
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,                  children: <Widget>[
                     Container(
-                      padding: EdgeInsets.only(top:30.0, left: 0.0, right: 50.0),
+                      padding: EdgeInsets.only(top:30.0),
                       child: Text("Today's Fresh Recipes", style: TextStyle(color: Colors.black87, fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Hellix'),),
                     ),
 
                     Container(
-                      padding: EdgeInsets.only(top:30.0, left: 50.0, right: 0.0),
+                      padding: EdgeInsets.only(top:30.0),
                       child: Text( "See All", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
                     ),
 
@@ -81,15 +79,19 @@ double rating =0;
 
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.only(top:30.0, left: 0.0, right: 75.0),
+                      padding: EdgeInsets.only(top:30.0),
                       child: Text("Recommended", style: TextStyle(color: Colors.black87, fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Hellix'),),
                     ),
 
+                    SizedBox(width: 40,),
+
                     Container(
-                      padding: EdgeInsets.only(top:30.0, left: 75.0, right: 00.0),
+                      padding: EdgeInsets.only(top:30.0,),
                       child: Text( "See All", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
                     ),
 
