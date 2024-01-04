@@ -126,22 +126,26 @@ class _SignInState extends State<SignIn> {
 
                       SizedBox(height: 10.0,),
 
-                      Container(
-                        padding: EdgeInsets.only(left: 120,),
-                        height: 40.0,
-                        color: Colors.transparent,
-                        child: Container(
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                        children:[
+                          Container(
+                            height: 40.0,
+                            color: Colors.transparent,
+                            child: Container(
 
-                          child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPass()));
-                            },
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPass()));
+                                },
 
-                            child: Center(
-                              child: Text("Forget Password?", style: TextStyle(color: Colors.cyan, decoration: TextDecoration.underline, fontWeight: FontWeight.normal, fontSize: 12.0, fontFamily: 'Hellix')),
+                                child: Center(
+                                  child: Text("Forget Password?", style: TextStyle(color: Colors.cyan, decoration: TextDecoration.underline, fontWeight: FontWeight.normal, fontSize: 12.0, fontFamily: 'Hellix')),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ]
                       ),
 
                       SizedBox(height: 40.0,),
