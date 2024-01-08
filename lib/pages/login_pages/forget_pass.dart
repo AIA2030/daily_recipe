@@ -29,9 +29,11 @@ class _ForgetPassState extends State<ForgetPass> {
                   Stack(
                     children: <Widget> [
                       Container(
-                        padding: EdgeInsets.fromLTRB(30.0, 70.0, 0.0, 0.0),
+                        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+                        alignment: Alignment.center,
                         child: Image.asset('assets/images/Logo (1).png', height: 111, width: 212, fit: BoxFit.fill),
                       ),
+
 
                       Container(
                           padding: EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
@@ -53,6 +55,7 @@ class _ForgetPassState extends State<ForgetPass> {
 
                         TextField(
                           controller: username,
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                               label: Text("Email/ Username", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
                               focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white, ))),

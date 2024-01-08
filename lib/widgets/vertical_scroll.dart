@@ -170,7 +170,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             mainAxisAlignment: MainAxisAlignment.center,
 
                             children: [
-                              Text( "Breakfast", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
+                              Text( "Main Dish", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
 
 
                             ],
@@ -294,7 +294,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             mainAxisAlignment: MainAxisAlignment.center,
 
                             children: [
-                              Text( "Breakfast", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
+                              Text( "Main Dish", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
 
 
                             ],
@@ -539,7 +539,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             mainAxisAlignment: MainAxisAlignment.center,
 
                             children: [
-                              Text( "Breakfast", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
+                              Text( "Main Dish", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
 
 
                             ],
@@ -663,7 +663,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                             mainAxisAlignment: MainAxisAlignment.center,
 
                             children: [
-                              Text( "Breakfast", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
+                              Text( "Main Dish", style: TextStyle(fontSize: 8.0, fontWeight: FontWeight.w500, color: Colors.cyan, fontFamily: 'Hellix'),),
 
 
                             ],

@@ -88,7 +88,7 @@ class _SignInState extends State<SignIn> {
                               return 'Email Is Required';
                             }
                             if (!EmailValidator.validate(value!)){
-                              return 'Not Vaild Email';
+                              return 'Not Valid Email';
                             }
                             return null;
                           }
@@ -162,7 +162,7 @@ class _SignInState extends State<SignIn> {
                           child: InkWell(
                             onTap: () async{
                               if(formKey.currentState?.validate() ?? false){
-                                GetIt.I.get<SharedPreferences>().setBool('isLogin', true);
+                                GetIt.I.get<SharedPreferences>().setBool('isSignIn', true);
                               }
 
 

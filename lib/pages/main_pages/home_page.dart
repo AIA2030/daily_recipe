@@ -66,7 +66,8 @@ double rating =0;
 
                     Container(
                       padding: EdgeInsets.only(top:30.0),
-                      child: Text( "See All", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
+                      child: TextButton( onPressed: () {  },
+                      child: Text("See All", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),),
                     ),
 
                   ],
@@ -91,8 +92,9 @@ double rating =0;
                     SizedBox(width: 40,),
 
                     Container(
-                      padding: EdgeInsets.only(top:30.0,),
-                      child: Text( "See All", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),
+                      padding: EdgeInsets.only(top:30.0),
+                      child: TextButton( onPressed: () {  },
+                        child: Text("See All", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.deepOrange, fontFamily: 'Hellix'),),),
                     ),
 
                   ],

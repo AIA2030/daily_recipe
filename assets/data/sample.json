@@ -1,0 +1,59 @@
+{
+  "ads": [
+
+    {
+      "title" : "Breakfast",
+      "subtitle" : "French Toast with \nBerries",
+      "image" : "assets/images/frensh_toast.png",
+      "calories": 120,
+      "prep_time" : 10,
+      "serving" : 1
+    },
+
+    {
+      "title" : "Main Dish",
+      "subtitle" : "Glazed Salmon",
+      "image" : "assets/images/detail_GlazedSalmon.png",
+      "calories": 280,
+      "prep_time" : 45,
+      "serving" : 2
+
+
+    },
+
+    {
+      "title" : "Breakfast",
+      "subtitle" : "Brown Sugar \nCinnamon Toast",
+      "image" : "assets/images/Cinnamon_Toaast.png",
+      "calories": 135,
+      "prep_time" : 15,
+      "serving" : 2
+
+    },
+
+    {
+      "title" : "Main Dish",
+      "subtitle" : "Asian Glazed \nChicken Thighs",
+      "image" : "assets/images/ChickenThighs.png",
+      "calories": 280,
+      "prep_time" : 45,
+      "serving" : 1
+
+    }
+  ],
+
+  "recipes": [
+    {
+      "id": 1,
+      "meal_type": "Breakfast",
+      "title": "test title",
+      "description": "test description",
+      "image": "assets_image",
+      "rating": 0,
+      "calories" : 100,
+      "prep_time" : 120,
+      "serving" : 2
+    }
+
+]
+}

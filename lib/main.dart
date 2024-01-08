@@ -1,7 +1,12 @@
+import 'package:daily_recipe/cubit/ads_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'pages/splash_screen/splash_screen.dart';
+
+
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +18,8 @@ void main() async{
     print(
         '=========================Error In init Prefrences ${e}========================');
   }
-  runApp(const MyApp());
+  // runApp(const MyApp());
+   runApp(BlocProvider<AdsCubit>(create: (context)=> AdsCubit()..fetchAds(), child:const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -57,3 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+// class AdBlocProvider extends StatelessWidget {
+//   final Widget child;
+//   const AdBlocProvider({required this.child});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return BlocProvider<AdsCubit>(create: (context) => AdsCubit()..fetchAds(),
+//     child: child,
+//     );
+//   }
+// }
