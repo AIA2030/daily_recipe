@@ -1,14 +1,10 @@
-import 'package:daily_recipe/cubit/ads_cubit.dart';
+import 'package:daily_recipe/pages/main_pages/bloc_carousel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
-import 'pages/splash_screen/splash_screen.dart';
 
-
-
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
     var preference = await SharedPreferences.getInstance();
@@ -18,8 +14,8 @@ void main() async{
     print(
         '=========================Error In init Prefrences ${e}========================');
   }
-  // runApp(const MyApp());
-   runApp(BlocProvider<AdsCubit>(create: (context)=> AdsCubit()..fetchAds(), child:const MyApp()));
+  runApp(const MyApp());
+  // runApp(BlocProvider<AdsBloc>(create: (context)=> AdsBloc(), child:const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -44,7 +40,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-
   final String title;
 
   @override
@@ -52,25 +47,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-
-        body:SplashScreen()
-    );
+    return Scaffold(body: BlocCarouselPage());
   }
 }
-
-// class AdBlocProvider extends StatelessWidget {
-//   final Widget child;
-//   const AdBlocProvider({required this.child});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return BlocProvider<AdsCubit>(create: (context) => AdsCubit()..fetchAds(),
-//     child: child,
-//     );
-//   }
-// }
