@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:daily_recipe/bloc/ads_bloc.dart';
 import 'package:daily_recipe/bloc/ads_state.dart';
 import 'package:daily_recipe/models/ads.model.dart';
+import 'package:daily_recipe/pages/main_pages/carousel_slider.dart';
 import 'package:daily_recipe/services/api_service.dart';
 import 'package:daily_recipe/widgets/section_header.dart';
 import 'package:daily_recipe/widgets/section_searchbar.dart';
@@ -414,6 +415,25 @@ class _BlocCarouselPageState extends State<BlocCarouselPage> {
                 ],
                 ),
                 ),
+                      Center(
+                          child: Container(
+                            height: 50.0,
+                            width: 315,
+                            decoration: BoxDecoration(
+                                color: Colors.deepOrange,
+                                borderRadius: BorderRadius.circular(15.0)),
+
+                            child: InkWell(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => CarouselPage()));
+
+                              },
+
+                              child: Center(
+                                child: Text("Carousel Slider Page", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0, fontFamily: 'Hellix' )),
+                              ),
+                            ),
+                          )),
                     ],
                   );
                 } else {

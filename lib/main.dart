@@ -1,4 +1,5 @@
 import 'package:daily_recipe/pages/main_pages/bloc_carousel.dart';
+import 'package:daily_recipe/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -49,6 +50,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: BlocCarouselPage());
+    return Scaffold(body: SplashScreen());
   }
 }

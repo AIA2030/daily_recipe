@@ -1,3 +1,4 @@
+import 'package:daily_recipe/pages/main_pages/bloc_carousel.dart';
 import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/pages/main_pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // go to home page
     } else {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => LogIn()));
+          context, MaterialPageRoute(builder: (_) => BlocCarouselPage()));
       // go to login page
     }
   }
