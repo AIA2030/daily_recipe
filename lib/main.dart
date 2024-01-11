@@ -1,7 +1,9 @@
+import 'package:daily_recipe/cubit/ads_cubit.dart';
 import 'package:daily_recipe/pages/main_pages/bloc_carousel.dart';
 import 'package:daily_recipe/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:provider/provider.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -33,7 +35,14 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Daily Recipe'),
+      home: MultiProvider(
+        providers: [
+          Provider<AdsCubit>(
+            create: (_) => AdsCubit(),
+          ),
+        ],
+        child: BlocCarouselPage(),
+      ),
     );
   }
 }
@@ -53,3 +62,4 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(body: SplashScreen());
   }
 }
+
