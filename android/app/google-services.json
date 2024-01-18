@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "761025666980",
+    "project_id": "daily-recipe-cc4c5",
+    "storage_bucket": "daily-recipe-cc4c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761025666980:android:5fe8a95a6482f1c2a8ab31",
+        "android_client_info": {
+          "package_name": "com.example.daily_recipe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8_npVL0Que9EXZAYPJDE_mMWFDGHzX9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

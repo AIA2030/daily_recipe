@@ -1,6 +1,6 @@
 import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/pages/main_pages/login_page.dart';
-import 'package:daily_recipe/pages/main_pages/provider%20carousel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -21,16 +21,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void initSplash() async {
     await Future.delayed(const Duration(seconds: 3));
-    if (GetIt.I.get<SharedPreferences>().getBool('isSignIn') ?? false) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => HomePage()));
-      // go to home page
-    } else {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => ProviderCarouselPage()));
-      // go to login page
-    }
+    FirebaseAuth.instance.authStateChanges().listen((user) {
+      if (user == null) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => LogIn()));
+      } else {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => HomePage()));
+      }
+    });
   }
+
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
+# Both the version and the builder number may be overridden in flutterflutterfire configure --project=daily-recipe-cc4c5
 # build by specifying --build-name and --build-number, respectively.
 # In Android, build-name is used as versionName while build-number used as versionCode.
 # Read more about Android versioning at https://developer.android.com/studio/publish/versioning
@@ -43,6 +43,8 @@ dependencies:
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
   provider: ^6.1.1
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2

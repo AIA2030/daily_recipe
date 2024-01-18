@@ -1,9 +1,9 @@
 import 'package:daily_recipe/pages/login_pages/forget_pass.dart';
 import 'package:daily_recipe/pages/login_pages/sign_up.dart';
-import 'package:daily_recipe/pages/main_pages/home_page.dart';
+import 'package:daily_recipe/provider/app_auth.provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 import 'package:email_validator/email_validator.dart';
 
 
@@ -16,21 +16,15 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
 
-  late TextEditingController emailController;
-  late TextEditingController passwordController;
-  late GlobalKey<FormState> formKey;
-  bool obsecureText = true;
   @override
   void initState() {
 
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
-    formKey = GlobalKey<FormState>();
+
      super.initState();
   }
 
   void toggleObsecure() {
-    obsecureText = !obsecureText;
+    Provider.of<AppAuthProvider>(context, listen: false).providrInit();
     setState(() {});
   }
 
@@ -39,171 +33,172 @@ class _SignInState extends State<SignIn> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Stack(
-        children: [
-          Form(
-            key: formKey,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/frying-pan-empty-assorted-spices.jpg', ), fit: BoxFit.cover)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget> [
-                  Stack(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Consumer<AppAuthProvider>(builder: (context, authProvider,_) => Form(
+                key: authProvider.formKey,
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/frying-pan-empty-assorted-spices.jpg', ), fit: BoxFit.cover)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget> [
-                      Container(
-                        alignment:Alignment.center,
-                        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
-                        child: Image.asset('assets/images/Logo (1).png', height: 111, width: 212, fit: BoxFit.fill),
-                      ),
-
-                      Container(
-                          padding: EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
-                          child: Center(
-                            child:Text( "Sign In", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal, color: Colors.white, fontFamily: 'Hellix'),),
-                          )
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget> [
-                      SizedBox(height: 10.0,),
-                      TextFormField(
-                          style: TextStyle(color: Colors.white),
-                          keyboardType: TextInputType.emailAddress,
-                          controller: emailController,
-                          decoration: InputDecoration(
-                              label: Row(
-                                children: [
-                                  Icon(Icons.email_outlined, color: Colors.grey.shade400,),
-                                  SizedBox(width: 10,),
-                                  Text("Email Address", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
-                                ],
-                              ),
-                              focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
-
-                          validator:(value){
-                            if(value != null || (value?.isEmpty ?? false)){
-                              return 'Email Is Required';
-                            }
-                            if (!EmailValidator.validate(value!)){
-                              return 'Not Valid Email';
-                            }
-                            return null;
-                          }
-                      ),
-                      SizedBox(height: 10.0,),
-
-                      TextFormField(
-                        style: TextStyle(color: Colors.white),
-                        obscureText: obsecureText,
-                        controller: passwordController,
-                        decoration: InputDecoration(
-                            label: Row(
-                              children: [
-                                Icon(Icons.lock_outline, color: Colors.grey.shade400,),
-                                SizedBox(width: 10,),
-                                Text("Password", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
-                              ],
-                            ),
-                            suffixIcon: InkWell(
-                              onTap: () => toggleObsecure(),
-                              child: Icon(obsecureText? Icons.visibility_off_outlined: Icons.visibility_outlined, color: Colors.grey.shade400,),
-                            ),
-                            focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
-
-                        validator: (value){
-                          if(value != null || (value?.isEmpty ?? false)) {
-                            return 'Password is Required';
-                          }
-                          if (value!.length<6){
-                            return 'Password Too Short';
-                          }
-                          return null;
-                        },
-                      ),
-
-                      SizedBox(height: 10.0,),
-
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                        children:[
+                      Stack(
+                        children: <Widget> [
                           Container(
-                            height: 40.0,
+                            alignment:Alignment.center,
+                            padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+                            child: Image.asset('assets/images/Logo (1).png', height: 111, width: 212, fit: BoxFit.fill),
+                          ),
+
+                          Container(
+                              padding: EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
+                              child: Center(
+                                child:Text( "Sign In", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal, color: Colors.white, fontFamily: 'Hellix'),),
+                              )
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget> [
+                          SizedBox(height: 10.0,),
+                          TextFormField(
+                            style: TextStyle(color: Colors.white),
+                            keyboardType: TextInputType.emailAddress,
+                            controller: authProvider.emailController,
+                            decoration: InputDecoration(
+                                label: Row(
+                                  children: [
+                                    Icon(Icons.email_outlined, color: Colors.grey.shade400,),
+                                    SizedBox(width: 10,),
+                                    Text("Email Address", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                  ],
+                                ),
+                                focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
+
+                            // validator:(value){
+                            //   if(value != null || (value?.isEmpty ?? false)){
+                            //     return 'Email Is Required';
+                            //   }
+                            //   if (!EmailValidator.validate(value!)){
+                            //     return 'Not Valid Email';
+                            //   }
+                            //   return null;
+                            // }
+
+                          ),
+                          SizedBox(height: 10.0,),
+
+                          TextFormField(
+                            style: TextStyle(color: Colors.white),
+                            obscureText: authProvider.obsecureText,
+                            controller: authProvider.passwordController,
+                            decoration: InputDecoration(
+                                label: Row(
+                                  children: [
+                                    Icon(Icons.lock_outline, color: Colors.grey.shade400,),
+                                    SizedBox(width: 10,),
+                                    Text("Password", style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix'),),
+                                  ],
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () => toggleObsecure(),
+                                  child: Icon(authProvider.obsecureText? Icons.visibility_off_outlined: Icons.visibility_outlined, color: Colors.grey.shade400,),
+                                ),
+                                focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
+
+                            // validator: (value){
+                            //   if(value != null || (value?.isEmpty ?? false)) {
+                            //     return 'Password is Required';
+                            //   }
+                            //   if (value!.length<6){
+                            //     return 'Password Too Short';
+                            //   }
+                            //   return null;
+                            // },
+                          ),
+
+                          SizedBox(height: 10.0,),
+
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children:[
+                                Container(
+                                  height: 40.0,
+                                  color: Colors.transparent,
+                                  child: Container(
+
+                                    child: InkWell(
+                                      onTap: (){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPass()));
+                                      },
+
+                                      child: Center(
+                                        child: Text("Forget Password?", style: TextStyle(color: Colors.cyan, decoration: TextDecoration.underline, fontWeight: FontWeight.normal, fontSize: 12.0, fontFamily: 'Hellix')),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ]
+                          ),
+
+                          SizedBox(height: 40.0,),
+
+                          Container(
+                            height: 50.0,
+                            width: 315,
                             color: Colors.transparent,
                             child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.deepOrange,
+                                  borderRadius: BorderRadius.circular(15.0)),
 
                               child: InkWell(
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPass()));
+                                onTap: () async{
+                                  authProvider.signUp(context);
                                 },
 
                                 child: Center(
-                                  child: Text("Forget Password?", style: TextStyle(color: Colors.cyan, decoration: TextDecoration.underline, fontWeight: FontWeight.normal, fontSize: 12.0, fontFamily: 'Hellix')),
+                                  child: Text("Sign In", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix')),
                                 ),
                               ),
                             ),
                           ),
-                        ]
+                        ],
                       ),
 
-                      SizedBox(height: 40.0,),
+                      SizedBox(height: 110.0,),
 
-                      Container(
-                        height: 50.0,
-                        width: 315,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.deepOrange,
-                              borderRadius: BorderRadius.circular(15.0)),
+                      Row(mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text("Don't have an account?", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
 
-                          child: InkWell(
-                            onTap: () async{
-                              if(formKey.currentState?.validate() ?? false){
-                                GetIt.I.get<SharedPreferences>().setBool('isSignIn', true);
-                              }
+                          SizedBox(width: 5.0,),
 
-
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
                             },
 
                             child: Center(
-                              child: Text("Sign In", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16.0, fontFamily: 'Hellix')),
+                              child: Text("Register.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.deepOrange, fontFamily: 'Hellix')),
                             ),
                           ),
-                        ),
+                        ],
                       ),
+
                     ],
                   ),
+                ),
 
-                  SizedBox(height: 110.0,),
-
-                  Row(mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text("Don't have an account?", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey.shade400, fontFamily: 'Hellix'),),
-
-                      SizedBox(width: 5.0,),
-
-                      InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
-                        },
-
-                        child: Center(
-                          child: Text("Register.", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.deepOrange, fontFamily: 'Hellix')),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                ],
               ),
-            ),
-
+              )
+            ],
           ),
-        ],
+        ),
       ),
 
     );  }
