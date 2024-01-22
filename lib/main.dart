@@ -2,15 +2,14 @@ import 'dart:convert';
 
 import 'package:daily_recipe/firebase_options.dart';
 import 'package:daily_recipe/models/ads.dart';
-import 'package:daily_recipe/models/ads.model.dart';
 import 'package:daily_recipe/pages/splash_screen/splash_screen.dart';
+import 'package:daily_recipe/provider/ads.provider.dart';
 import 'package:daily_recipe/provider/app_auth.provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:overlay_kit/overlay_kit.dart';
 import 'package:provider/provider.dart';
-
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -35,7 +34,8 @@ void main() async {
   // runApp(const MyApp());
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_)=> AppAuthProvider()),
-      ChangeNotifierProvider(create: (context)=> AdsProvider()),
+      // ChangeNotifierProvider(create: (context)=> AdsProvider()),
+    ChangeNotifierProvider(create: (context)=> AdProvider()),
   ], child:const MyApp( )));
   // runApp(ChangeNotifierProvider(create: (context)=> AdsProvider(), child:const MyApp()));
 }
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return OverlayKit(child: MaterialApp(
       title: 'Daily Recipe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Daily Recipe'),
-    );
+    ));
   }
 }
 

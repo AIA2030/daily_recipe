@@ -1,9 +1,9 @@
+import 'dart:async';
+
 import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/pages/main_pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  StreamSubscription<User?>? _listener;
   @override
   void initState() {
     initSplash();
@@ -20,8 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void initSplash() async {
-    await Future.delayed(const Duration(seconds: 3));
-    FirebaseAuth.instance.authStateChanges().listen((user) {
+    await Future.delayed(const Duration(seconds: 1));
+    _listener = FirebaseAuth.instance.authStateChanges().listen((user) {
       if (user == null) {
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (_) => LogIn()));
@@ -32,6 +33,11 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
+  @override
+  void dispose() {
+    _listener?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

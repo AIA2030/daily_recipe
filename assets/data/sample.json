@@ -2,58 +2,49 @@
   "ads": [
 
     {
+      "id" : 1,
       "title" : "Breakfast",
       "subtitle" : "French Toast with \nBerries",
-      "image" : "assets/images/frensh_toast.png",
-      "calories": 120,
-      "prep_time" : 10,
-      "serving" : 1
+      "image" : "https://drive.google.com/file/d/1nGyyursIvPClnexm_tr8a2udmzZSl4Md/view?usp=drive_link",
+      "calories": "120 Calories",
+      "time" : "10 mins",
+      "serving" : "1 serving"
     },
 
     {
+      "id" : 2,
       "title" : "Main Dish",
       "subtitle" : "Glazed Salmon",
-      "image" : "assets/images/detail_GlazedSalmon.png",
-      "calories": 280,
-      "prep_time" : 45,
-      "serving" : 2
-
+      "image" : "https://drive.google.com/file/d/1DDtP6695t-mFoHcmD5Dy4K2i4vLXEwpM/view?usp=drive_link",
+      "calories": "280 Calories",
+      "time" : "45 mins",
+      "serving" : "2 serving"
 
     },
 
     {
+      "id" : 3,
       "title" : "Breakfast",
       "subtitle" : "Brown Sugar \nCinnamon Toast",
-      "image" : "assets/images/Cinnamon_Toaast.png",
-      "calories": 135,
-      "prep_time" : 15,
-      "serving" : 2
-
+      "image" : "https://drive.google.com/file/d/1c4uBuMRcPvVHHT_chc2yYFwtqyNmZK1W/view?usp=drive_link",
+      "calories": "135 Calories",
+      "time" : "15 mins",
+      "serving" : "2 serving"
     },
 
     {
+      "id" : 4,
       "title" : "Main Dish",
       "subtitle" : "Asian Glazed \nChicken Thighs",
-      "image" : "assets/images/ChickenThighs.png",
-      "calories": 280,
-      "prep_time" : 45,
-      "serving" : 1
-
-    }
-  ],
-
-  "recipes": [
-    {
-      "id": 1,
-      "meal_type": "Breakfast",
-      "title": "test title",
-      "description": "test description",
-      "image": "assets_image",
-      "rating": 0,
-      "calories" : 100,
-      "prep_time" : 120,
-      "serving" : 2
+      "image" : "https://drive.google.com/file/d/1JhbSbDmsQwNakkEdzDhD2YZ-iAcseDSG/view?usp=drive_link",
+      "calories": "280 Calories",
+      "time" : "45 mins",
+      "serving" : "1 serving"
     }
 
-]
+
+  ]
+
 }
+
+

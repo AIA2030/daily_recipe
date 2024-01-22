@@ -1,9 +1,7 @@
 import 'package:daily_recipe/pages/login_pages/sign_in.dart';
 import 'package:daily_recipe/provider/app_auth.provider.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:email_validator/email_validator.dart';
 
 
 class SignUp extends StatefulWidget {
