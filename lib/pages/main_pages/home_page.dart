@@ -1,16 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:daily_recipe/pages/main_pages/carousel_slider.dart';
 import 'package:daily_recipe/pages/main_pages/firebase_carousel.dart';
-import 'package:daily_recipe/pages/main_pages/login_page.dart';
-import 'package:daily_recipe/provider/app_auth.provider.dart';
 import 'package:daily_recipe/widgets/herzontial_scroll.dart';
-import 'package:daily_recipe/widgets/recipe_drawer.dart';
 import 'package:daily_recipe/widgets/section_header.dart';
 import 'package:daily_recipe/widgets/section_searchbar.dart';
 import 'package:daily_recipe/widgets/vertical_scroll.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
+
 
 
  var objectvalue =0;
@@ -111,28 +106,6 @@ double rating =0;
 
                 SizedBox(height: 20),
 
-                // Center(
-                //   child: Container(
-                //     height: 50.0,
-                //     width: 315,
-                //     decoration: BoxDecoration(
-                //         color: Colors.deepOrange,
-                //         borderRadius: BorderRadius.circular(15.0)),
-                //
-                //   child: InkWell(
-                //     onTap: (){
-                //       Navigator.push(context, MaterialPageRoute(builder: (context) => CarouselPage()));
-                //
-                //     },
-                //
-                //     child: Center(
-                //       child: Text("Carousel Slider Page", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0, fontFamily: 'Hellix' )),
-                //     ),
-                //   ),
-                // )),
-                //
-                // SizedBox(height: 10),
-
                 Center(
                     child: Container(
                       height: 50.0,
@@ -152,29 +125,6 @@ double rating =0;
                         ),
                       ),
                     )),
-
-                // SizedBox(height: 10),
-                //
-                // Center(
-                //     child: Container(
-                //       height: 50.0,
-                //       width: 315,
-                //       decoration: BoxDecoration(
-                //           color: Colors.deepOrange,
-                //           borderRadius: BorderRadius.circular(15.0)),
-                //
-                //       child: InkWell(
-                //         onTap: (){
-                //           Navigator.push(context, MaterialPageRoute(builder: (context) => LogIn()));
-                //
-                //         },
-                //
-                //         child: Center(
-                //           child: Text("Sign Out", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0, fontFamily: 'Hellix' )),
-                //         ),
-                //       ),
-                //     )),
-
 
               ],
             ),

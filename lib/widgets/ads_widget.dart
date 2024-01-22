@@ -1,14 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/provider/ads.provider.dart';
-import 'package:daily_recipe/widgets/section_header.dart';
-import 'package:daily_recipe/widgets/section_searchbar.dart';
 import 'package:flutter/material.dart';
-import 'package:overlay_kit/overlay_kit.dart';
 import 'package:provider/provider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AdsWidget extends StatefulWidget {
@@ -27,19 +22,19 @@ class _AdsWidgetState extends State<AdsWidget> {
   }
 
   void init() async{
-    await Provider.of<AdProvider>(context, listen: false).getAds();
+    await Provider.of<AdsProvider>(context, listen: false).getAds();
   }
 
 
   @override
   void dispose() {
-    Provider.of<AdProvider>(context, listen: false).disposeCarousel();
+    Provider.of<AdsProvider>(context, listen: false).disposeCarousel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Consumer<AdProvider>(
+    return  Consumer<AdsProvider>(
       builder: (ctx, adProvider, _) => adProvider.adsList == null
           ? const CircularProgressIndicator()
           : (adProvider.adsList?.isEmpty ?? false)

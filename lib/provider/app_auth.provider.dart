@@ -123,7 +123,12 @@ class AppAuthProvider extends ChangeNotifier {
           await credentials.user?.updateDisplayName(nameController!.text);
           OverlayLoadingProgress.stop();
           providrDispose();
-
+          OverlayToastMessage.show(
+            widget: const ToastMessageWidget(
+              message: 'You Login Successully',
+              toastMessageStatus: ToastMessageStatus.success,
+            ),
+          );
           if (context.mounted) {
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (_) => HomePage()));
@@ -131,8 +136,38 @@ class AppAuthProvider extends ChangeNotifier {
         }
         OverlayLoadingProgress.stop();
       }
+    } on FirebaseAuthException catch (e) {
+      OverlayLoadingProgress.stop();
+
+      if (e.code == 'user-not-found') {
+        OverlayToastMessage.show(
+          widget: const ToastMessageWidget(
+            message: 'user not found',
+            toastMessageStatus: ToastMessageStatus.failed,
+          ),
+        );
+      } else if (e.code == 'wrong-password') {
+        OverlayToastMessage.show(
+            widget: const ToastMessageWidget(
+              message: 'Wrong password provided for that user.',
+              toastMessageStatus: ToastMessageStatus.failed,
+            ));
+      } else if (e.code == "user-disabled") {
+        OverlayToastMessage.show(
+            widget: const ToastMessageWidget(
+              message: 'This email Account was disabled',
+              toastMessageStatus: ToastMessageStatus.failed,
+            ));
+      } else if (e.code == "invalid-credential") {
+        OverlayToastMessage.show(
+            widget: const ToastMessageWidget(
+              message: 'invalid-credential',
+              toastMessageStatus: ToastMessageStatus.failed,
+            ));
+      }
     } catch (e) {
       OverlayLoadingProgress.stop();
+      OverlayToastMessage.show(textMessage: 'General Error $e');
     }
   }
 
@@ -145,6 +180,7 @@ class AppAuthProvider extends ChangeNotifier {
           MaterialPageRoute(builder: (_) => LogIn()), (route) => false);
     }
     OverlayLoadingProgress.stop();
+
   }
 }
 

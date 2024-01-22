@@ -25,9 +25,9 @@ class _HeaderDrawerState extends State<HeaderDrawer> {
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
     child: Center(
     child:  ClipRRect(
-    child: Image.network('https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_1280.jpg', fit: BoxFit.cover, width: 80, height: 80,),
     clipBehavior: Clip.antiAlias,
     borderRadius: BorderRadius.all(Radius.circular(100)),
+    child: Image.network('https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_1280.jpg', fit: BoxFit.cover, width: 80, height: 80,),
 
     ),
     ),

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:daily_recipe/pages/main_pages/home_page.dart';
 import 'package:daily_recipe/pages/main_pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';

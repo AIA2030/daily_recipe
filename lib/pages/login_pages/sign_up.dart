@@ -89,15 +89,12 @@ class _SignUpState extends State<SignUp> {
                                 ),
                                 focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
-                            // validator:(value){
-                            //   if(value != null || (value?.isEmpty ?? false)){
-                            //     return 'Email Is Required';
-                            //   }
-                            //   if (!EmailValidator.validate(value!)){
-                            //     return 'Not Vaild Email';
-                            //   }
-                            //   return null;
-                            // }
+                            validator: (value) {
+                              if (value == null || (value?.isEmpty ?? false)) {
+                                return 'Email Is Required';
+                              }
+                              return null;
+                            },
                           ),
                           SizedBox(height: 10.0,),
 
@@ -119,15 +116,12 @@ class _SignUpState extends State<SignUp> {
                                 ),
                                 focusedBorder: UnderlineInputBorder( borderSide: BorderSide(color: Colors.white))),
 
-                            // validator: (value){
-                            //   if(value != null || (value?.isEmpty ?? false)) {
-                            //     return 'Password is Required';
-                            //   }
-                            //   if (value!.length<6){
-                            //     return 'Password Too Short';
-                            //   }
-                            //   return null;
-                            // },
+                            validator: (value) {
+                              if (value == null || (value?.isEmpty ?? false)) {
+                                return 'Password Is Required';
+                              }
+                              return null;
+                            },
                           ),
 
                           SizedBox(height: 40.0,),

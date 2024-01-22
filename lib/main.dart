@@ -1,7 +1,5 @@
-import 'dart:convert';
 
 import 'package:daily_recipe/firebase_options.dart';
-import 'package:daily_recipe/models/ads.dart';
 import 'package:daily_recipe/pages/splash_screen/splash_screen.dart';
 import 'package:daily_recipe/provider/ads.provider.dart';
 import 'package:daily_recipe/provider/app_auth.provider.dart';
@@ -22,11 +20,6 @@ void main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-
-    // if (preference != null) {
-    //   print(
-    //       '========================= prefrences init Successfully ========================');
-    // }
   } catch (e) {
     print(
         '=========================Error In init Prefrences ${e}========================');
@@ -34,8 +27,7 @@ void main() async {
   // runApp(const MyApp());
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_)=> AppAuthProvider()),
-      // ChangeNotifierProvider(create: (context)=> AdsProvider()),
-    ChangeNotifierProvider(create: (context)=> AdProvider()),
+    ChangeNotifierProvider(create: (context)=> AdsProvider()),
   ], child:const MyApp( )));
   // runApp(ChangeNotifierProvider(create: (context)=> AdsProvider(), child:const MyApp()));
 }
